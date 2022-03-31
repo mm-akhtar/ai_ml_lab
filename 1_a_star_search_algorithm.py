@@ -3,8 +3,8 @@
 Created on Sun Dec  5 20:13:35 2021
 
 @author: akhtar
-"""
 
+"""
 class Graph:
     def __init__(self, adjac_lis):
         self.adjac_lis = adjac_lis
@@ -14,13 +14,21 @@ class Graph:
     
     #This is heuristic function which is having equal values for all nodes
     def h(self, n):
-        keys = adjac_lis.keys()
+        H = {
+            'A': 1,
+            'B': 1,
+            'C': 1,
+            'D': 1
+            }
+        return H[n]
+        '''keys = adjac_lis.keys()
         H = {}
         for x in keys:
             H[x] = 1
             
         H[chr(ord(list(H)[-1]) + 1)] = 1
-        return H[n]
+        return H[n]'''
+    
     
     def a_star_algorithm(self, start, stop):
         # In this open_lst is a list of nodes which have been visited, but who's 
@@ -86,12 +94,11 @@ class Graph:
         return None
 
 adjac_lis = {
-    'A': [('B', 1), ('C', 3), ('D', 4)],
-    'B': [('D', 2)],
-    'C': [('D', 1)],
-    'D': [('B', 4), ('E', 1)],
-    'E': [('D', 3)]
-}
+    'A': [('B', 1), ('C', 3), ('D', 7)],
+    'B': [('D', 5)],
+    'C': [('D', 12)]
+    }
+    
 graph1 = Graph(adjac_lis)
 graph1.a_star_algorithm('A', 'D')
-        
+
