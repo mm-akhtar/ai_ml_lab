@@ -7,7 +7,7 @@ Created on Thu Mar 31 16:11:06 2022
 import pandas as pd
 import numpy as np
 
-data = pd.DataFrame(data = pd.read_csv('ws.csv'))
+data = pd.DataFrame(data = pd.read_csv('3-dataset.csv'))
 concepts = np.array(data.iloc[:,:-1])
 target = np.array(data.iloc[:, -1])
 
